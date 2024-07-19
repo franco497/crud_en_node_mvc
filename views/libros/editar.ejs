@@ -1,0 +1,42 @@
+<%- include ../layouts/cabecera.ejs %>
+<br><br>
+
+<div class="card">
+    <div class="card-header">Formulario de Captura</div>
+    <div class="card-body">
+        <h4 class="card-title">Editar Datos del Libro</h4>
+        <p class="card-text">
+
+         
+<form action="../actualizar/" method="post" enctype="multipart/form-data">
+
+    <input type="hidden" name="id" value="<%= libro.id %>">
+    
+    <div class="form-group">
+        <label for="my-input">Nombre:</label>
+        <input id="my-input" value="<%= libro.nombre %>" class="form-control" type="text" name="nombre">
+    </div>
+    
+    <br>
+    <div class="form-group">
+        <label for="my-input">Imagen:</label>
+        
+        <img src="../../images/<%= libro.imagen %>" alt="" class="img-thumbnail" width="100">
+        
+        <input id="my-input" class="form-control-file" type="file" name="archivo">
+    </div>
+    
+    <br>
+    <button class="btn btn-success" type="submit">Actualizar</button>
+    <a class="btn btn-primary" href="/libros">Cancelar</a>
+
+    </form>
+      
+
+        </p>
+    </div>
+    <div class="card-footer text-muted"></div>
+</div>
+
+
+<%- include ../layouts/pie.ejs %>
